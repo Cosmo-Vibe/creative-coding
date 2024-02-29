@@ -1,0 +1,115 @@
+/* Define color variables for light mode */
+:root {
+  --background-color: #f0f0f0;
+  --text-color: #333;
+  --border-color: #333;
+  --button-bg-color: #007bff;
+  --button-hover-bg-color: #0056b3;
+  --select-border-color: #ccc;
+}
+
+/* Styles for dark mode */
+.dark-theme {
+  --background-color: #121212;
+  --text-color: #fff;
+  --border-color: #bbb;
+  --button-bg-color: #1a73e8;
+  --button-hover-bg-color: #0056b3;
+  --select-border-color: #666;
+}
+
+/* General Styles */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+#exercice {
+  margin: 2vh;
+  display: block;
+  flex-direction: column;
+  align-items: flex-start;
+  font-family: "Bodoni", sans-serif;
+  font-size: 170%;
+  margin: 2vh;
+  margin-top: 15vh;
+  margin-left: 5vh;
+}
+
+/* Style du Canvas */
+canvas {
+  border: 2px solid var(--border-color);
+  border-radius: 25px;
+  margin: 2vh;
+  box-shadow: 10px 10px 20px var(--border-color);
+}
+
+/* Styles des Boutons */
+button {
+  padding: 10px 15px;
+  margin: 2vh;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--button-bg-color);
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: var(--button-hover-bg-color);
+}
+
+/* Style du Sélecteur d'Exercices */
+select {
+  padding: 2vh;
+  margin: 2vh;
+  border: 1px solid var(--select-border-color);
+  border-radius: 5px;
+}
+
+/* Bouton de bascule du thème */
+.theme-toggle {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  transition: background-color 0.3s;
+}
+
+/* Media queries pour les petits écrans */
+@media only screen and (hover: none) and (pointer: coarse) {
+  #exercice {
+    margin-top: 10vh;
+    margin-left: 0;
+    align-items: center;
+    font-size: 100%;
+    
+  }
+
+  .theme-toggle {
+    top: 5px;
+    right: 5px;
+  }
+
+  body {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  canvas {
+    max-width: 100%;
+    max-height: 60%;
+  }
+  button,
+  select {
+    font-size: 14px;
+  }
+}
